@@ -2,7 +2,9 @@
   "compilerOptions": {
     "outDir": "./dist",
     "module": "CommonJS",
+    "strict": true,
     "esModuleInterop": true,
-    "allowJs": true
+    "allowJs": true,
+    "strictNullChecks": true
   }
 }
