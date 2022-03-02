@@ -7,6 +7,16 @@
     "test": "jest --passWithNoTests --watch",
     "test:staged": "jest --passWithNoTests"
   },
+  "hooks": {
+    "pre-commit": "eslint"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint 'src/**' --fix",
+      "npm run test:staged",
+      "git add"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,7 +30,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "git-commit-msg-linter": "^4.1.1",
-    "husky": "^7.0.4",
+    "husky": "^4.3.8",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.4",
     "ts-jest": "^27.1.3",
