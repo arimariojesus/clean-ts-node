@@ -9,11 +9,6 @@ export class AccountMongoRepository implements AddAccountRepository {
     const result = await accountCollection.insertOne(accountData)
     const { insertedId: id } = result
     const accountById = await accountCollection.findOne({ _id: id })
-    const _id = accountById?._id.toHexString()
-    const account = {
-      ...accountById,
-      id: _id
-    } as unknown as AccountModel
-    return account
+    return MongoHelper.map<AccountModel>(accountById)
   }
 }
