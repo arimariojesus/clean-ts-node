@@ -5,8 +5,10 @@ const makeController = (): Controller => {
   class ControllerStub implements Controller {
     async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
       const httpResponse = {
-        body: {},
-        statusCode: 200
+        statusCode: 200,
+        body: {
+          name: 'John Doe'
+        }
       }
       return await Promise.resolve(httpResponse)
     }
@@ -30,8 +32,7 @@ const makeSut = (): SutTypes => {
 
 describe('LogController Decorator', () => {
   it('Should call controller handle', async () => {
-    const { sut, controllerStub } = makeSut()
-    const handleSpy = jest.spyOn(controllerStub, 'handle')
+    const { sut } = makeSut()
     const httpRequest = {
       body: {
         name: 'any_name',
@@ -40,7 +41,12 @@ describe('LogController Decorator', () => {
         passwordConfirmation: 'any_password'
       }
     }
-    await sut.handle(httpRequest)
-    expect(handleSpy).toHaveBeenCalledWith(httpRequest)
+    const httpResponse = await sut.handle(httpRequest)
+    expect(httpResponse).toEqual({
+      statusCode: 200,
+      body: {
+        name: 'John Doe'
+      }
+    })
   })
 })
