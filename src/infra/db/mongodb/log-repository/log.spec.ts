@@ -10,7 +10,6 @@ describe('Log Mongo Repository', () => {
   let errorCollection: Collection
 
   beforeAll(async () => {
-    console.log(process.env.MONGO_URL)
     await MongoHelper.connect(process.env.MONGO_URL as string)
   })
 
