@@ -11,12 +11,10 @@ export class EmailValidation implements Validation {
     this.emailValidator = emailValidator
   }
 
-  validate (input: any): Error | null {
+  validate (input: any): Error | undefined {
     const isEmailValid = this.emailValidator.isValid(input[this.fieldName])
     if (!isEmailValid) {
       return new InvalidParamError(this.fieldName)
     }
-
-    return null
   }
 }

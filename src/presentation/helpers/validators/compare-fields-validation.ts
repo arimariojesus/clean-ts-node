@@ -10,11 +10,9 @@ export class CompareFieldsComposite implements Validation {
     this.fieldToCompareName = fieldToCompareName
   }
 
-  validate (input: any): Error | null {
+  validate (input: any): Error | undefined {
     if (input[this.fieldName] !== input[this.fieldToCompareName]) {
       return new InvalidParamError(this.fieldToCompareName)
     }
-
-    return null
   }
 }
