@@ -2,13 +2,10 @@ import { Controller, HttpRequest, HttpResponse, Authentication, Validation } fro
 import { badRequest, ok, serverError, unauthorized } from '../../helpers/http/http-helpers'
 
 export class LoginController implements Controller {
-  validation: Validation
-  authentication: Authentication
-
-  constructor (authentication: Authentication, validation: Validation) {
-    this.validation = validation
-    this.authentication = authentication
-  }
+  constructor (
+    private readonly authentication: Authentication,
+    private readonly validation: Validation
+  ) {}
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
