@@ -4,7 +4,8 @@
     "module": "CommonJS",
     "strict": false,
     "esModuleInterop": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "rootDir": "src"
   },
   "include": [
     "src"
