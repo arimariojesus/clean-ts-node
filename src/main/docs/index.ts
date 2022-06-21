@@ -1,6 +1,6 @@
-import { loginPath } from './paths/login-path'
-import { accountSchema } from './schemas/account-schema'
-import { loginParamsSchema } from './schemas/login-params-schema'
+import { loginPath } from './paths'
+import { badRequest, serverError, notFound, success, unauthorized } from './components'
+import { accountSchema, errorSchema, loginParamsSchema } from './schemas'
 
 export default {
   openapi: '3.0.3',
@@ -10,6 +10,10 @@ export default {
     version: '1.0.0',
     author: 'Arimário Jesus <arimario.jesus@hotmail.com> (https://github.com/arimariojesus)',
     termsOfService: '#'
+  },
+  license: {
+    name: 'ISC',
+    url: 'https://opensource.org/licenses/ISC'
   },
   servers: [{
     url: '/api',
@@ -23,6 +27,14 @@ export default {
   },
   schemas: {
     account: accountSchema,
-    'login-params': loginParamsSchema
+    'login-params': loginParamsSchema,
+    error: errorSchema
+  },
+  components: {
+    'bad-request': badRequest,
+    'server-error': serverError,
+    'not-found': notFound,
+    unauthorized,
+    success
   }
 }
