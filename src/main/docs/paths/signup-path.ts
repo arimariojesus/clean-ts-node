@@ -1,7 +1,7 @@
 export const signUpPath = {
   post: {
     tags: ['Login'],
-    summary: 'API parar autenticar usuário',
+    summary: 'API para autenticar usuário',
     requestBody: {
       content: {
         'application/json': {
