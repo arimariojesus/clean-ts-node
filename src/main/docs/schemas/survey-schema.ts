@@ -1,4 +1,5 @@
 export const surveySchema = {
+  required: ['*'],
   type: 'object',
   properties: {
     id: { type: 'string' },
