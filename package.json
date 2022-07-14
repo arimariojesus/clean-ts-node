@@ -61,6 +61,7 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
+    "@faker-js/faker": "^7.3.0",
     "bcrypt": "^5.0.1",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
