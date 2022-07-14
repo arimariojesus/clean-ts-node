@@ -1,6 +1,7 @@
 # Cadastro
 
 > ## Caso de sucesso:
+
 1. ✅ Recebe uma requisição do tipo **POST** na rota **/api/signup**
 1. ✅ Valida dados obrigatórios **name**, **email**, **password** e **passwordConfirmation**
 1. ✅ Valida que **password** e **passwordConfirmation** são iguais
@@ -10,8 +11,10 @@
 1. ✅ Cria uma conta para o usuário com os dados informados, substituindo a senha pela senha criptorafada
 1. ✅ Gera um token de acesso a partir do ID do usuário
 1. ✅ Atualiza os dados do usuário com o token de acesso gerado
-1. ✅ Retorna 200 com o token de acesso
+1. ✅ Retorna 200 com o token de acesso e o nome do usuário
+
 > ## Exceções:
+
 1. ✅ Retorna erro 404 se a API não existir
 1. ✅ Retorna erro 400 se **name**, **email**, **password** ou **passwordConfirmation** não forem fornecidos pelo client
 1. ✅ Retorna erro 400 se **password** e **passwordConfirmation** não forem iguais
