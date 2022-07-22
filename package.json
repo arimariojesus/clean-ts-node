@@ -64,6 +64,8 @@
   },
   "dependencies": {
     "@faker-js/faker": "^7.3.0",
+    "@graphql-tools/schema": "^8.5.0",
+    "@graphql-tools/utils": "^8.8.0",
     "apollo-server-express": "^3.10.0",
     "bcrypt": "^5.0.1",
     "bson-objectid": "^2.0.3",
