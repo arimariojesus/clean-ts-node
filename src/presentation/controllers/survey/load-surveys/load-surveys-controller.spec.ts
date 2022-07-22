@@ -47,7 +47,7 @@ describe('LoadSurveys Controller', () => {
     const { sut, loadSurveysSpy } = makeSut()
     loadSurveysSpy.surveyModels = []
     const httpResponse = await sut.handle(mockRequest())
-    expect(httpResponse).toEqual(noContent())
+    expect(httpResponse).toEqual(noContent([]))
   })
 
   test('Should return 500 if LoadSurveys throws', async () => {

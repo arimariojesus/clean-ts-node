@@ -36,9 +36,9 @@ export const ok = (data: any): HttpResponse => {
   }
 }
 
-export const noContent = (): HttpResponse => {
+export const noContent = (valueType?: any): HttpResponse => {
   return {
     statusCode: 204,
-    body: null
+    body: valueType || null
   }
 }
