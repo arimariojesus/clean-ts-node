@@ -6,7 +6,7 @@ export default gql`
   }
 
   extend type Mutation {
-    saveSurveyResult (surveyId: String!, answer: String!): [SurveyResult!]! @auth
+    saveSurveyResult (surveyId: String!, answer: String!): SurveyResult! @auth
   }
   
   type SurveyResult {
