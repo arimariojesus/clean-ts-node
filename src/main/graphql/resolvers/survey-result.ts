@@ -1,6 +1,5 @@
 import { adaptResolver } from '@/main/adapters'
-import { makeLoadSurveyResultController } from '@/main/factories/controllers/survey-result/load-survey-result/load-survey-result-controller-factory'
-import { makeSaveSurveyResultController } from '@/main/factories/controllers/survey-result/save-survey-result/save-survey-result-controller-factory'
+import { makeLoadSurveyResultController, makeSaveSurveyResultController } from '@/main/factories'
 
 export default {
   Query: {

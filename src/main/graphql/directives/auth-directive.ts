@@ -2,7 +2,7 @@ import { GraphQLSchema } from 'graphql'
 import { ForbiddenError } from 'apollo-server-express'
 import { mapSchema, getDirective, MapperKind } from '@graphql-tools/utils'
 
-import { makeAuthMiddleware } from '@/main/factories/middlewares/auth-middleware-controller-factory'
+import { makeAuthMiddleware } from '@/main/factories'
 
 export const authDirectiveTransformer = (schema: GraphQLSchema): GraphQLSchema => {
   return mapSchema(schema, {
